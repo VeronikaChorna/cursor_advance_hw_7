@@ -26,9 +26,13 @@ function getMySalary(country) {
     const max = 2000;
     const salary = (Math.random() * (max - min) + min).toFixed(0);
     const taxes = (country.tax * salary).toFixed(2);
-    const profit = salary - taxes;
+    const profit = (salary - taxes).toFixed(2);
     const mySalary = {salary, taxes, profit};
-    return mySalary;
-    
+    console.log(mySalary);
 }
-console.log(getMySalary(ukraine));
+setInterval(() => {
+    getMySalary(ukraine)
+}, 10000);
+
+
+
